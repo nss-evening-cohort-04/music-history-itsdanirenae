@@ -1,48 +1,49 @@
-from django.contrib.auth.models import
+from django.contrib.auth.models import User
 from rest_framework import serializers
+from music_history_api import models
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-  """
-  Explixitly creates a User serializer
-  """
+    """
+    Explixitly creates a User serializer
+    """
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ('first_name',)
 
 
 class ArtistSerializer(serializers.HyperlinkedModelSerializer):
-  """
-  This is the hyperlinked serailizer for the Artist Model
-  """
+    """
+    This is the hyperlinked serailizer for the Artist Model
+    """
     class Meta:
-        model = Artist
+        model = models.Artist
         fields = '__all__'
 
 
 class AlbumSerializer(serializers.HyperlinkedModelSerializer):
-  """
-  This is the hyperlinked serailizer for the Album Model
-  """
+    """
+    This is the hyperlinked serailizer for the Album Model
+    """
     class Meta:
-        model = Album
+        model = models.Album
         fields = '__all__'
 
 
 class GenreSerializer(serializers.HyperlinkedModelSerializer):
-  """
-  This is the hyperlinked serailizer for the Genre Model
-  """
+    """
+    This is the hyperlinked serailizer for the Genre Model
+    """
     class Meta:
-        model = Genre
+        model = models.Genre
         fields = '__all__'
 
 
 class SongSerializer(serializers.HyperlinkedModelSerializer):
-  """
-  This is the hyperlinked serailizer for the Song Model
-  """
+    """
+    This is the hyperlinked serailizer for the Song Model
+    """
     class Meta:
-        model = Song
+        model = models.Song
         fields = '__all__'
 
 

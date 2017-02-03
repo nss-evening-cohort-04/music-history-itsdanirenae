@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from music_history import views
+from music_history_api import views
 from rest_framework import routers
 
 router = routers. DefaultRouter()
